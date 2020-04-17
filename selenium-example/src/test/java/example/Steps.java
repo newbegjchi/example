@@ -34,14 +34,12 @@ public class Steps {
 
     @When("^action$")
     public void action() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        System.out.println("to be implemented");
     }
 
     @Then("^outcome$")
     public void outcome() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        System.out.println("to be implemented");
     }
 
 

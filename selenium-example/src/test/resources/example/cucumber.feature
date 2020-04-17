@@ -1,5 +1,5 @@
 Feature: example
   Scenario: example
     Given a base page
-    When action
+    When I log into the system using valid creds
     Then outcome

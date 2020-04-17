@@ -13,9 +13,19 @@ public class TestConf {
     private static final ObjectMapper MAPPER = buildMapper();
     private static final TestConf EXTERNAL_CONF = buildConfSingleton(BASE_CONF);
     private String baseUrl;
+    private String userName;
+    private String password;
 
     public String getBaseUrl() {
         return baseUrl;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public static TestConf getBaseConf() {

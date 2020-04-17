@@ -7,6 +7,9 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import example.pages.BasePage;
+import example.pages.HomePage;
+import example.util.TestConf;
+import junit.framework.TestCase;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -15,6 +18,9 @@ public class Steps {
 
     private WebDriver driver;
     private Object currentPage;
+    private static final String USER_NAME = TestConf.getBaseConf().getUserName();
+    private static final String PASSWORD = TestConf.getBaseConf().getPassword();
+
 
     @Before
     public void setDriver() {
@@ -32,9 +38,10 @@ public class Steps {
         verifyCurrent(BasePage.class);
     }
 
-    @When("^action$")
+    @When("^I log into the system using valid creds$")
     public void action() throws Throwable {
-        System.out.println("to be implemented");
+        currentPage = ((BasePage) currentPage).login(USER_NAME, PASSWORD);
+        verifyCurrent(HomePage.class);
     }
 
     @Then("^outcome$")
